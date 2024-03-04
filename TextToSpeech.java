@@ -3,8 +3,8 @@ import com.sun.speech.freetts.VoiceManager;
 /**
  * Beschreiben Sie hier die Klasse Voice.
  * 
- * @author (Ihr Name) 
- * @version (eine Versionsnummer oder ein Datum)
+ * @author Dawid Szymon Kazek     
+ * @version 0.1
  */
 
 
