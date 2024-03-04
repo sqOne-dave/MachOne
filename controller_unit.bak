@@ -1,0 +1,17 @@
+unit controller_unit;
+
+interface
+
+procedure time_jumper;
+
+implementation
+
+uses printer_unit; 
+
+procedure time_jumper;
+begin
+        hour_changer;
+        time_printer; 
+end;
+
+end.

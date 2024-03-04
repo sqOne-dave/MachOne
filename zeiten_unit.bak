@@ -1,0 +1,93 @@
+unit zeiten_unit;
+
+interface
+
+procedure taktung(gamespeed:INTEGER);
+procedure hour_changer;
+procedure day_changer;
+procedure weekday_changer; 
+procedure month_changer;
+procedure year_changer;
+
+implementation
+//1 Tag = 4 Sekunden vier verschieden Tageszeiten
+uses CRT,controller_unit,globalvar_unit;
+
+procedure taktung(gamespeed:INTEGER);
+begin
+        case gamespeed of
+                1: delay(1000);
+                2: delay(500);
+                4: delay(250);
+                8: delay(125);
+        end;
+time_jumper;
+end;
+
+procedure hour_changer;
+begin
+        case t.hour of
+                0..22:  t.hour:= t.hour + 1;
+                23:     begin
+                                t.hour:= 0;
+                                day_changer;
+                        end; 
+        end;
+end; 
+
+procedure day_changer; 
+begin
+t.day := t.day + 1;  
+weekday_changer; 
+        case t.month of 
+                1,3,5,7,8,10,12:        begin
+                                                if (t.day >= 32 ) then
+                                                begin
+                                                        t.day := 1;
+                                                        month_changer;         
+                                                end;   
+                                        end;
+                                          
+                2:                      begin
+                                                if (t.day >= 29 ) then
+                                                begin
+                                                        t.day := 1;
+                                                        month_changer;         
+                                                end;   
+                                        end;
+                4,6,8,9,11:             begin
+                                                if (t.day >= 31 ) then
+                                                begin
+                                                        t.day := 1;
+                                                        month_changer;         
+                                                end;   
+                                        end;
+        end; 
+        
+end;
+
+procedure weekday_changer; 
+begin
+        case t.wday of 
+                1..7:   t.wday:= t.wday + 1; 
+                8:      t.wday:= 1;
+        end;  
+end;
+
+procedure month_changer; 
+begin
+        case t.month of
+                1..12:  t.month:= t.month + 1;
+                13:     begin
+                                t.month:= 1;
+                                year_changer; 
+                        end;
+        end;                
+end;
+
+procedure year_changer;
+begin
+        t.year := t.year + 1; 
+end;
+
+end.

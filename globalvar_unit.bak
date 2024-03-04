@@ -1,0 +1,28 @@
+unit globalvar_unit;
+
+interface
+
+type
+        time_stemp = record
+                hour: byte;
+                day:byte;
+                wday:byte;
+                month:byte;
+                X_year:boolean; 
+                year:INTEGER;
+end;
+
+var t:time_stemp;
+
+implementation
+
+initialization 
+
+t.hour := 0; 
+t.day := 1;
+t.wday := 1; 
+t.month := 1;
+X_year := true; 
+t.year := 0;
+
+end.
