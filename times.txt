@@ -1,0 +1,26 @@
+TODO 
+
+Schaltjahrberechnung (28/29 Tage) für Feb. einbauen 
+
+Spielgeschwindigkeit = Taktung
+
+1 Stunde = 1 Sekunde 
+24 Stunden = 24 Sekunden 
+
+wenn Geschwindigkeit x2 
+
+1 Stunde = 0.5 Sekunden
+24 Stunden = 12 Sekunden
+
+wenn Geschwindigkeit x4 
+
+1 Stunde = 0.25 Sekunden 
+24 Stunden= 6 Sekunden
+
+wenn Geschwindigkeit x8
+ 
+1 Stunde = 0.125 Sekunden
+24 Stunden = 3 Sekunden
+
+
+ 
